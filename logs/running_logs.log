@@ -1,2 +1,36 @@
 [2024-11-17 10:39:22,480: INFO: main: dev is live ]
 [2024-11-17 10:39:34,160: INFO: main: dev is live ]
+[2024-11-17 17:34:23,584: INFO: main: >>>> stage Data Ingestion stage started <<<<]
+[2024-11-17 17:34:23,585: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-11-17 17:34:23,585: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-17 17:34:23,585: ERROR: main: yaml file is empty]
+Traceback (most recent call last):
+  File "/home/vedaya/git/Kidney-Disease-Classification/src/cnnClassifier/utils/common.py", line 33, in read_yaml
+    return ConfigBox(content)
+  File "box/box.py", line 259, in box.box.Box.__init__
+box.exceptions.BoxValueError: First argument must be mapping or iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 8, in <module>
+    obj.main()
+  File "/home/vedaya/git/Kidney-Disease-Classification/src/cnnClassifier/pipeline/stage_01_data_ingestion.py", line 12, in main
+    config = ConfigurationManager()
+  File "/home/vedaya/git/Kidney-Disease-Classification/src/cnnClassifier/config/configuration.py", line 12, in __init__
+    self.params = read_yaml(params_filepath)
+  File "/home/vedaya/miniconda3/envs/kidney/lib/python3.8/site-packages/ensure/main.py", line 849, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "/home/vedaya/git/Kidney-Disease-Classification/src/cnnClassifier/utils/common.py", line 35, in read_yaml
+    raise ValueError("yaml file is empty")
+ValueError: yaml file is empty
+[2024-11-17 17:39:14,504: INFO: main: >>>> stage Data Ingestion stage started <<<<]
+[2024-11-17 17:39:14,504: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-11-17 17:39:14,505: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-17 17:39:14,505: INFO: common: created directory at: artifacts]
+[2024-11-17 17:39:14,505: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-17 17:39:14,505: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1uUaAXY6cVMzeb9Yzxu_in-bUVG5TKFAL/view?usp=drive_link into artifacts/data_ingestion/data.zip]
+[2024-11-17 17:45:11,629: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1uUaAXY6cVMzeb9Yzxu_in-bUVG5TKFAL/view?usp=drive_link into artifacts/data_ingestion/data.zip]
+[2024-11-17 17:45:20,442: INFO: main: >>>> stage Data Ingestion stage completed <<<< 
+
+]
